@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: dev-mysql
+    network_mode: host
+    volumes:
+      - dev-mysql:/var/lib/mysql:rw
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=dev_db
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
+    mem_limit: 512m
+
+volumes:
+  dev-mysql:
